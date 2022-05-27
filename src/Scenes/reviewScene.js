@@ -18,7 +18,7 @@ let activeInterval
 let timerList = []
 
 let clickedList = []
-let wordGround = [6, 6, 6]
+let wordGround = [6, 6, 5]
 
 const posInfoList = [
     { x: 2, y: 40 },
@@ -88,7 +88,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             baseObject.current.className = 'aniObject'
 
 
-            timerList[0] = setTimeout(activeBtnFunc, 5000);
+            timerList[0] = setTimeout(activeBtnFunc, 1500);
 
             setRepeatType(2)
 
@@ -112,14 +112,14 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             timerList[6] = setTimeout(() => {
                 audioList.bodyAudio1.play();
 
-                timerList[7] = setTimeout(() => {
-                    audioList.bodyAudio2.play();
+                // timerList[7] = setTimeout(() => {
+                // audioList.bodyAudio2.play();
 
-                    timerList[8] = setTimeout(() => {
-                        audioList.commonAudio3.play()
-                        startRepeatAudio()
+                timerList[8] = setTimeout(() => {
+                    audioList.commonAudio3.play()
+                    startRepeatAudio()
 
-                    }, audioList.bodyAudio2.duration * 1000 + 300);
+                    // }, audioList.bodyAudio2.duration * 1000 + 300);
                 }, audioList.bodyAudio1.duration * 1000 + 1000);
 
             }, 1500);
@@ -280,6 +280,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
                         top: _baseGeo.top + 'px',
                     }}
                 >
+                    <BaseImage url='bg/green_bg.png' />
 
                     <div
                         style={{
