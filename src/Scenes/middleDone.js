@@ -39,12 +39,14 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
         },
 
         sceneEnd: () => {
+            setSceneLoad(false)
+            
             audioList.bodyAudio1.pause();
 
             for (let i = 0; i < timerList.length; i++)
                 clearTimeout(timerList[i])
 
-            setSceneLoad(false)
+            
         }
     }))
 

@@ -62,6 +62,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
         },
         sceneEnd: () => {
             setSceneLoad(false)
+            
             stepCount = 0;
             totalStep = 0
             stopRepeatAudio()
