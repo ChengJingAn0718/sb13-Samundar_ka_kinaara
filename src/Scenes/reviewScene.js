@@ -122,7 +122,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
 
             }, 1500);
 
-            // baseObject.current.className = 'aniObject'
         }
     }
 
