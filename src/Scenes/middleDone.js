@@ -28,6 +28,13 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
             parentRef.current.className = 'aniObject'
             spakleRef.current.className = 'excellentText'
 
+
+            setExtraVolume(audioList.clapAudio, 1.5)
+            setExtraVolume(audioList.yeahAudio, 1.5)
+            setExtraVolume(audioList.tingAudio, 1.5)
+            setExtraVolume(audioList.buzzAudio, 1.5)
+            setExtraVolume(audioList.successAudio, 1.5)
+
             loadFunc();
 
             timerList[0] = setTimeout(() => {
@@ -40,13 +47,13 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
 
         sceneEnd: () => {
             setSceneLoad(false)
-            
+
             audioList.bodyAudio1.pause();
 
             for (let i = 0; i < timerList.length; i++)
                 clearTimeout(timerList[i])
 
-            
+
         }
     }))
 
@@ -54,7 +61,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
     return (
         <div>
             {isSceneLoad
-             &&
+                &&
                 <div ref={parentRef} className="hideObject">
                     < div ref={spakleRef} className="hideObject" style={{
                         position: "fixed",

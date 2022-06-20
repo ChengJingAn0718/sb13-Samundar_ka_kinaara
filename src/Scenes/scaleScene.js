@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from 'react';
 import "../stylesheets/styles.css";
 import BaseImage from '../components/BaseImage';
 import { UserContext } from '../components/BaseShot';
-import { getAudioPath, prePathUrl } from "../components/CommonFunctions";
+import { getAudioPath, prePathUrl, setExtraVolume } from "../components/CommonFunctions";
 import { MaskComponent } from "../components/CommonComponents"
 
 
@@ -26,7 +26,8 @@ const maskPathList = [
 const maskTransformList = [
     { x: 0.5, y: 0.3, s: 2 },
     { x: 0.35, y: 0.6, s: 2.4 },
-    { x: 0.3, y: 0.7, s: 2.4 },
+    { x: 0.65, y: 0.7, s: 2.4 },
+
     { x: 0.3, y: -0.3, s: 1.6 },
     { x: 0.25, y: -0.25, s: 1.5 },
     { x: 0.3, y: -0.5, s: 2 },
@@ -49,11 +50,11 @@ let subMaskNum = 0;
 const marginPosList = [
     { s: 2, l: 0.5, t: 0.3 },
     { s: 2, l: 0.3, t: 0.6 },
-    { s: 2, l: 0.3, t: 0.8 },
+    { s: 2, l: 0.6, t: 0.8 },
     { s: 2, l: 0.6, t: -0.5 },
     { s: 2, l: 0.6, t: -0.5 },
     { s: 2, l: 0.4, t: -0.3 },
-    { s: 2, l: -0.5, t: 0.6 },
+    { s: 2, l: -0.57, t: 0.6 },
     { s: 3, l: -0.2, t: -0.2 },
     { s: 2, l: -0.3, t: 0.2 },
     { s: 2, l: 0.1, t: 0.1 },
@@ -132,6 +133,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
             audioList.bodyAudio1.src = getAudioPath('intro/2');
             audioList.bodyAudio2.src = getAudioPath('intro/1');
+
+
+            setExtraVolume(audioList.bodyAudio1, 4)
+            setExtraVolume(audioList.bodyAudio2, 4)
+            setExtraVolume(audioList.bodyAudio3, 4)
 
             blackWhiteObject.current.style.WebkitMaskImage = 'url("' +
                 returnImgPath(maskPathList[currentMaskNum][0], true) + '")'
