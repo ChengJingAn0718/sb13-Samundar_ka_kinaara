@@ -27,12 +27,12 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
         sceneLoad: () => {
             setSceneLoad(true)
 
-          
+
 
         },
         sceneStart: () => {
 
-            for (let i = 0; i < 17; i++)
+            for (let i = 0; i < 9; i++)
                 setExtraVolume(audioList[i], 4)
 
             parentRef.current.className = 'aniObject'
@@ -51,6 +51,11 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
                 audioList.yeahAudio.play().catch(error => { });
             }, 3000);
 
+            timerList[3] = setTimeout(() => {
+                for (let i = 9; i < 17; i++)
+                    setExtraVolume(audioList[i], 4)
+            }, 7000);
+
             timerList[1] = setTimeout(() => {
                 nextFunc();
             }, 11000);
@@ -60,6 +65,9 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
             audioList.yeahAudio.pause();
 
             audioList.bodyAudio1.pause();
+
+
+
 
             audioList.clapAudio.currentTime = 0;
             audioList.yeahAudio.currentTime = 0;
