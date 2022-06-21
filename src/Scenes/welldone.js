@@ -26,8 +26,16 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
     React.useImperativeHandle(ref, () => ({
         sceneLoad: () => {
             setSceneLoad(true)
+
+            for (let i = 0; i < 7; i++)
+                setExtraVolume(audioList[i], 4)
+
         },
         sceneStart: () => {
+
+            for (let i = 7; i < 17; i++)
+                setExtraVolume(audioList[i], 4)
+
             parentRef.current.className = 'aniObject'
             spakleRef.current.className = 'excellentText'
 
