@@ -202,7 +202,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
 
         clickedList.push(index)
 
-        setExtraVolume(audioList[index], 5)
+        setExtraVolume(audioList[index], 6)
         
         setTimeout(() => {
             audioList[index].play();
