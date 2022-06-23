@@ -135,9 +135,9 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
             audioList.bodyAudio2.src = getAudioPath('intro/1');
 
 
-            setExtraVolume(audioList.bodyAudio1, 5)
-            setExtraVolume(audioList.bodyAudio2, 5)
-            setExtraVolume(audioList.bodyAudio3, 5)
+            setExtraVolume(audioList.bodyAudio1, 6)
+            setExtraVolume(audioList.bodyAudio2, 6)
+            setExtraVolume(audioList.bodyAudio3, 6)
 
             blackWhiteObject.current.style.WebkitMaskImage = 'url("' +
                 returnImgPath(maskPathList[currentMaskNum][0], true) + '")'

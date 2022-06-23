@@ -87,7 +87,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
         sceneStart: () => {
             baseObject.current.className = 'aniObject'
 
-            setExtraVolume(audioList.commonAudio3, 5)
+            setExtraVolume(audioList.commonAudio3, 6)
 
 
             timerList[0] = setTimeout(activeBtnFunc, 1500);
