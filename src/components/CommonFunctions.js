@@ -158,6 +158,8 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 } else {
     // production code
     sharePrePath = './'
+    // sharePrePath = './ee03_md_saki_ex/'
+
 }
 
 export const prePathUrl = () => sharePrePath;
