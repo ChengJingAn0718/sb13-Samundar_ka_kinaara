@@ -64,11 +64,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
             setExtraVolume(audioList.commonAudio2, 6)
             setExtraVolume(audioList.commonAudio1, 6)
 
-            
+
         },
         sceneEnd: () => {
             setSceneLoad(false)
-            
+
             stepCount = 0;
             totalStep = 0
             stopRepeatAudio()
@@ -95,13 +95,13 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
 
     const showControlFunc = () => {
 
-        blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
-
-        if (stepCount < questionPartCount - 1)
+        if (stepCount < questionPartCount - 1) {
+            blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
             aniImageList.map((image, index) => {
                 if (index < 3)
                     image.current.setUrl('question/' + (stepCount + 2) + '/' + (index + 1) + '.png')
             })
+        }
 
 
         timerList[2] = setTimeout(() => {
